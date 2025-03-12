@@ -1,4 +1,4 @@
-# SydneySurburbs_Building_Employment_density_ratio_analysis
+#  Employment & Business Density Dynamics Analysis in Sydney
 
 ## 1. Project Overview
 Overview of the study on business growth, job creation, and floor space expansion in Sydney.
