@@ -75,6 +75,7 @@ This study utilizes four datasets from the Floor Space and Employment Survey (FE
 
 ### Data Preprocessing 
 ```SQL
+-- Input data checking 
 Select * 
 From  floor_space_22
 Limit 20;
@@ -83,6 +84,7 @@ Limit 20;
 
 
 ```SQL
+-- Checking null values
 Select Count(*) as total_rows,
 Sum(case when blocktxt is null then 1 else 0 end) as null_blocktxt,
 Sum(case when internal_floorarea is null then 1 else 0 end) as null_internal_floor_area,
@@ -104,7 +106,7 @@ Rename column ï»¿OBJECTID to Num;
 
 -- Droping "BLOCKTXT" column
 Alter table floor_space_22
-DROP column BLOCKTXT;
+Drop column BLOCKTXT;
 ```
 
 ```SQL
@@ -144,6 +146,7 @@ SET suburb =
 
 
 ```SQL
+-- Checking for "Unknown" values in suburb column
 Select * 
 From  floor_space_22
 Where Businesses > 50
@@ -175,13 +178,14 @@ SET suburb =
 
 ### Exploratory Data Analysis (EDA)
 ```SQL
--- Statistical analysis
--- Min, max, avg floor area
+-- Statistical analysis (min, max, mean value and standard deviation)
 SELECT 'Min Internal Floor Area' AS attribute, MIN(internal_floorarea) AS value FROM floor_space_22
 UNION ALL
 SELECT 'Max Internal Floor Area', MAX(internal_floorarea) FROM floor_space_22
 UNION ALL
 SELECT 'Avg Internal Floor Area', AVG(internal_floorarea) FROM floor_space_22
+UNION ALL
+SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(internal_floorarea) AS value FROM floor_space_22
 UNION ALL
 SELECT 'Min Block', MIN(blocknum) FROM floor_space_22
 UNION ALL
@@ -189,11 +193,15 @@ SELECT 'Max Block', MAX(blocknum) FROM floor_space_22
 UNION ALL
 SELECT 'Avg Block', AVG(blocknum) FROM floor_space_22
 UNION ALL
+SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(blocknum) AS value FROM floor_space_22
+UNION ALL
 SELECT 'Min Part-Time Jobs', MIN(total_parttime_jobs) FROM floor_space_22
 UNION ALL
 SELECT 'Max Part-Time Jobs', MAX(total_parttime_jobs) FROM floor_space_22
 UNION ALL
 SELECT 'Avg Part-Time Jobs', AVG(total_parttime_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(Total_PartTime_Jobs) AS value FROM floor_space_22
 UNION ALL
 SELECT 'Min Full-Time Jobs', MIN(total_fulltime_jobs) FROM floor_space_22
 UNION ALL
@@ -201,11 +209,15 @@ SELECT 'Max Full-Time Jobs', MAX(total_fulltime_jobs) FROM floor_space_22
 UNION ALL
 SELECT 'Avg Full-Time Jobs', AVG(total_fulltime_jobs) FROM floor_space_22
 UNION ALL
+SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(total_fulltime_jobs) AS value FROM floor_space_22
+UNION ALL
 SELECT 'Min Total Jobs', MIN(total_jobs) FROM floor_space_22
 UNION ALL
 SELECT 'Max Total Jobs', MAX(total_jobs) FROM floor_space_22
 UNION ALL
 SELECT 'Avg Total Jobs', AVG(total_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(total_jobs) AS value FROM floor_space_22
 UNION ALL
 SELECT 'Min Businesses', MIN(businesses) FROM floor_space_22
 UNION ALL
@@ -213,13 +225,17 @@ SELECT 'Max Businesses', MAX(businesses) FROM floor_space_22
 UNION ALL
 SELECT 'Avg Businesses', AVG(businesses) FROM floor_space_22
 UNION ALL
+SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(Businesses) AS value FROM floor_space_22
+UNION ALL
 SELECT 'Min Perimeter', MIN(perimeter) FROM floor_space_22
 UNION ALL
 SELECT 'Max Perimeter', MAX(perimeter) FROM floor_space_22
 UNION ALL
-SELECT 'Avg Perimeter', AVG(perimeter) FROM floor_space_22;
+SELECT 'Avg Perimeter', AVG(perimeter) FROM floor_space_22
+UNION ALL
+SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(PERIMETER) AS value FROM floor_space_22;
 ```
-![Screenshot 2025-03-14 150638](https://github.com/user-attachments/assets/640765a2-33b6-4884-984e-80dbd85ff8f5)
+![Screenshot 2025-03-14 153856](https://github.com/user-attachments/assets/5edf9052-8dbb-4ede-a155-316aab201ac9)
 
 
 
