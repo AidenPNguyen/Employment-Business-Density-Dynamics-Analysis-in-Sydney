@@ -1,6 +1,6 @@
 #  Employment & Business Density Dynamics Analysis in Sydney
 
-![682140203942a556ae5f524ba48d56a2](https://github.com/user-attachments/assets/f307dca9-914d-4fbc-a885-327c9827754b)
+![prodema-rustik-wood-ey-centre-fjmt-01](https://github.com/user-attachments/assets/19c15dd3-2df1-4de1-ae4d-729502dbbe99)
 
 ## Table of Contents
 [Project Overview](#project-overview)
