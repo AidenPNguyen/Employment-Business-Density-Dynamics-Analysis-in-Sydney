@@ -1,9 +1,35 @@
 #  Employment & Business Density Dynamics Analysis in Sydney
 
+![682140203942a556ae5f524ba48d56a2](https://github.com/user-attachments/assets/f307dca9-914d-4fbc-a885-327c9827754b)
+
+## Table of Contents
+[Project Overview](#project-overview)
+
+[Project goals and objectives](#project-goals-and-objectives)
+
+[About the data](#about-the-data)
+
+[Dataset Attributes Overview](#dataset-attributes-overview)
+
+[Tools and libraries](#️-tools-and-libraries)
+
+[Methodology](#methodology)
+
+- [Data preprocessing](#data-preproccessing)
+
+- [Data Visualization](#data-visualization)
+
+[The key insights](#the-key-insights)
+
+[Project challenges](#project-challenges)
+
+[Conclusion](#conclusion)
+
 ## Project Overview
 Overview of the study on business growth, job creation, and floor space expansion in Sydney.
 Importance of the Floor Space and Employment Survey dataset.
-## 2. Project Goals and Objectives
+
+## Project Goals and Objectives
 Understanding business trends over 15 years.
 Identifying growth patterns and correlations between businesses, jobs, and floor space.
 Creating visual dashboards for analysis.
