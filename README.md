@@ -82,6 +82,7 @@ Limit 20;
 ```
 ![Screenshot 2025-02-13 103936](https://github.com/user-attachments/assets/48d24610-9d67-4b7d-97c3-f0f2fec93abc)
 
+Firstly, the dataset is checked to ensure that MySQL has installed the dataset properly.
 
 ```SQL
 -- Checking null values
@@ -122,24 +123,24 @@ Having count(*) > 1;
 
 ```SQL
 -- Adding column
-SET SQL_SAFE_UPDATES = 0;
-ALTER TABLE floor_space_22 ADD COLUMN suburb VARCHAR(50);
+Set sql_safe_updates = 0;
+Alter table floor_space_22 add column suburb varchar(50);
 
-UPDATE floor_space_22
-SET suburb = 
-    CASE 
-        WHEN blocknum BETWEEN 1000 AND 1199 THEN 'Alexandria'
-        WHEN blocknum BETWEEN 1200 AND 1299 OR blocknum BETWEEN 1073 AND 1078 THEN 'Zetland'
-        WHEN blocknum BETWEEN 300 AND 357 THEN 'Pott Point'
-        WHEN blocknum BETWEEN 370 AND 399 THEN 'Moore Park'
-        WHEN blocknum BETWEEN 1 AND 241 OR blocknum BETWEEN 1370 AND 1376 THEN 'Sydney CBD'
-        WHEN blocknum BETWEEN 900 AND 999 OR blocknum BETWEEN 839 AND 845 THEN 'Glebe'
-        WHEN blocknum BETWEEN 800 AND 899 THEN 'Camperdown'
-        WHEN blocknum BETWEEN 400 AND 599 THEN 'Darlinghurst and Surry Hill'
-        WHEN blocknum BETWEEN 600 AND 799 THEN 'Redfern, Erskineville and Macdonaldtown'
-        WHEN blocknum BETWEEN 1300 AND 1410 THEN 'Redfern, Erskineville and Macdonaldtown'
-        ELSE 'Unknown'
-    END;
+Update floor_space_22
+Set suburb = 
+    Case 
+        When blocknum between 1000 and 1199 then 'Alexandria'
+        When blocknum between 1200 and 1299 or blocknum between 1073 and 1078 then 'Zetland'
+        When blocknum between 300 and 357 then 'Pott Point'
+        When blocknum between 370 and 399 then 'Moore Park'
+        When blocknum between 1 and 241 or blocknum between 1370 and 1376 then 'Sydney Cbd'
+        When blocknum between 900 and 999 or blocknum between 839 and 845 then 'Glebe'
+        When blocknum between 800 and 899 then 'Camperdown'
+        When blocknum between 400 and 599 then 'Darlinghurst And Surry Hill'
+        When blocknum between 600 and 799 then 'Redfern, Erskineville And Macdonaldtown'
+        When blocknum between 1300 and 1410 then 'Redfern, Erskineville And Macdonaldtown'
+        Else 'Unknown'
+    End;
 ```
 ![Screenshot 2025-02-13 110953](https://github.com/user-attachments/assets/7d4c6540-97a9-4271-8f47-0a3dc977de1c)
 
@@ -152,88 +153,88 @@ From  floor_space_22
 Where Businesses > 50
 Limit 100;
 
-SELECT blocknum, suburb 
-FROM floor_space_22
+Select blocknum, suburb 
+From floor_space_22
 Where suburb = "Unknown"
-ORDER By blocknum;
+Order By blocknum;
 ```
 
 ```SQL
-UPDATE floor_space_22
-SET suburb = 
-    CASE  
-        WHEN blocknum BETWEEN 1000 AND 1199 THEN 'Alexandria'
-        WHEN blocknum BETWEEN 1200 AND 1299 OR blocknum BETWEEN 1073 AND 1078 THEN 'Zetland'
-        WHEN blocknum BETWEEN 0300 AND 0357 THEN 'Pott Point'
-        WHEN blocknum BETWEEN 0370 AND 0399 OR blocknum BETWEEN 0360 AND 0363 THEN 'Moore Park'
-        WHEN blocknum BETWEEN 0001 AND 0241 OR blocknum BETWEEN 1370 AND 1376 THEN 'Sydney CBD'
-        WHEN blocknum BETWEEN 0900 AND 0999 OR blocknum BETWEEN 0839 AND 0845 THEN 'Glebe'
-        WHEN blocknum BETWEEN 0800 AND 0899 THEN 'Camperdown'
-        WHEN blocknum BETWEEN 0400 AND 0599 THEN 'Darlinghurst and Surry Hill'
-        WHEN blocknum BETWEEN 0600 AND 0799 THEN 'Redfern, Erskineville and Macdonaldtown'
-        WHEN blocknum BETWEEN 1300 AND 1410 THEN 'Redfern, Erskineville and Macdonaldtown'
-        ELSE 'Unknown'  
-    END;
+Update floor_space_22
+Set suburb = 
+    Case  
+        When blocknum between 1000 and 1199 then 'Alexandria'
+        When blocknum between 1200 and 1299 or blocknum between 1073 and 1078 then 'Zetland'
+        When blocknum between 0300 and 0357 then 'Pott Point'
+        When blocknum between 0370 and 0399 or blocknum between 0360 and 0363 then 'Moore Park'
+        When blocknum between 0001 and 0241 or blocknum between 1370 and 1376 then 'Sydney Cbd'
+        When blocknum between 0900 and 0999 or blocknum between 0839 and 0845 then 'Glebe'
+        When blocknum between 0800 and 0899 then 'Camperdown'
+        When blocknum between 0400 and 0599 then 'Darlinghurst And Surry Hill'
+        When blocknum between 0600 and 0799 then 'Redfern, Erskineville And Macdonaldtown'
+        When blocknum between 1300 and 1410 then 'Redfern, Erskineville And Macdonaldtown'
+        Else 'Unknown'  
+    End;
 ```
 
 ### Exploratory Data Analysis (EDA)
 ```SQL
 -- Statistical analysis (min, max, mean value and standard deviation)
-SELECT 'Min Internal Floor Area' AS attribute, MIN(internal_floorarea) AS value FROM floor_space_22
-UNION ALL
-SELECT 'Max Internal Floor Area', MAX(internal_floorarea) FROM floor_space_22
-UNION ALL
-SELECT 'Avg Internal Floor Area', AVG(internal_floorarea) FROM floor_space_22
-UNION ALL
-SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(internal_floorarea) AS value FROM floor_space_22
-UNION ALL
-SELECT 'Min Block', MIN(blocknum) FROM floor_space_22
-UNION ALL
-SELECT 'Max Block', MAX(blocknum) FROM floor_space_22
-UNION ALL
-SELECT 'Avg Block', AVG(blocknum) FROM floor_space_22
-UNION ALL
-SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(blocknum) AS value FROM floor_space_22
-UNION ALL
-SELECT 'Min Part-Time Jobs', MIN(total_parttime_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Max Part-Time Jobs', MAX(total_parttime_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Avg Part-Time Jobs', AVG(total_parttime_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(Total_PartTime_Jobs) AS value FROM floor_space_22
-UNION ALL
-SELECT 'Min Full-Time Jobs', MIN(total_fulltime_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Max Full-Time Jobs', MAX(total_fulltime_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Avg Full-Time Jobs', AVG(total_fulltime_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(total_fulltime_jobs) AS value FROM floor_space_22
-UNION ALL
-SELECT 'Min Total Jobs', MIN(total_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Max Total Jobs', MAX(total_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Avg Total Jobs', AVG(total_jobs) FROM floor_space_22
-UNION ALL
-SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(total_jobs) AS value FROM floor_space_22
-UNION ALL
-SELECT 'Min Businesses', MIN(businesses) FROM floor_space_22
-UNION ALL
-SELECT 'Max Businesses', MAX(businesses) FROM floor_space_22
-UNION ALL
-SELECT 'Avg Businesses', AVG(businesses) FROM floor_space_22
-UNION ALL
-SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(Businesses) AS value FROM floor_space_22
-UNION ALL
-SELECT 'Min Perimeter', MIN(perimeter) FROM floor_space_22
-UNION ALL
-SELECT 'Max Perimeter', MAX(perimeter) FROM floor_space_22
-UNION ALL
-SELECT 'Avg Perimeter', AVG(perimeter) FROM floor_space_22
-UNION ALL
-SELECT 'Min Internal Floor Area' AS attribute, stddev_samp(PERIMETER) AS value FROM floor_space_22;
+Select 'Min Internal Floor Area' as attribute, Min(internal_floorarea) as value from floor_space_22
+Union all
+Select 'Max Internal Floor Area', Max(internal_floorarea) from floor_space_22
+Union all
+Select 'Avg Internal Floor Area', Avg(internal_floorarea) from floor_space_22
+Union all
+Select 'Min Internal Floor Area' as attribute, Stddev_samp(internal_floorarea) as value from floor_space_22
+Union all
+Select 'Min Block', Min(blocknum) from floor_space_22
+Union all
+Select 'Max Block', Max(blocknum) from floor_space_22
+Union all
+Select 'Avg Block', Avg(blocknum) from floor_space_22
+Union all
+Select 'Min Internal Floor Area' as attribute, Stddev_samp(blocknum) as value from floor_space_22
+Union all
+Select 'Min Part-Time Jobs', Min(total_parttime_jobs) from floor_space_22
+Union all
+Select 'Max Part-Time Jobs', Max(total_parttime_jobs) from floor_space_22
+Union all
+Select 'Avg Part-Time Jobs', Avg(total_parttime_jobs) from floor_space_22
+Union all
+Select 'Min Internal Floor Area' as attribute, Stddev_samp(total_parttime_jobs) as value from floor_space_22
+Union all
+Select 'Min Full-Time Jobs', Min(total_fulltime_jobs) from floor_space_22
+Union all
+Select 'Max Full-Time Jobs', Max(total_fulltime_jobs) from floor_space_22
+Union all
+Select 'Avg Full-Time Jobs', Avg(total_fulltime_jobs) from floor_space_22
+Union all
+Select 'Min Internal Floor Area' as attribute, Stddev_samp(total_fulltime_jobs) as value from floor_space_22
+Union all
+Select 'Min Total Jobs', Min(total_jobs) from floor_space_22
+Union all
+Select 'Max Total Jobs', Max(total_jobs) from floor_space_22
+Union all
+Select 'Avg Total Jobs', Avg(total_jobs) from floor_space_22
+Union all
+Select 'Min Internal Floor Area' as attribute, Stddev_samp(total_jobs) as value from floor_space_22
+Union all
+Select 'Min Businesses', Min(businesses) from floor_space_22
+Union all
+Select 'Max Businesses', Max(businesses) from floor_space_22
+Union all
+Select 'Avg Businesses', Avg(businesses) from floor_space_22
+Union all
+Select 'Min Internal Floor Area' as attribute, Stddev_samp(businesses) as value from floor_space_22
+Union all
+Select 'Min Perimeter', Min(perimeter) from floor_space_22
+Union all
+Select 'Max Perimeter', Max(perimeter) from floor_space_22
+Union all
+Select 'Avg Perimeter', Avg(perimeter) from floor_space_22
+Union all
+Select 'Min Internal Floor Area' as attribute, Stddev_samp(perimeter) as value from floor_space_22;
 ```
 ![Screenshot 2025-03-14 153856](https://github.com/user-attachments/assets/5edf9052-8dbb-4ede-a155-316aab201ac9)
 
@@ -258,37 +259,37 @@ Limit 20;
 
 
 ```SQL
-ALTER TABLE floor_space_22 ADD COLUMN jobs_sqm float;
+Alter table floor_space_22 ADD COLUMN jobs_sqm float;
 
 Update floor_space_22
-	SET jobs_sqm = CASE 
-    WHEN internal_floorarea = 0 OR internal_floorarea IS NULL OR total_jobs = 0 
-    THEN 0  -- No jobs or no business, so set to 0
-    ELSE ROUND(total_jobs / NULLIF(internal_floorarea, 0), 2) 
-END;
+	Set jobs_sqm = CASE 
+    When internal_floorarea = 0 OR internal_floorarea Is null or total_jobs = 0 
+    Then 0  -- No jobs or no business, so set to 0
+    Else Round(total_jobs / NULLIF(internal_floorarea, 0), 2) 
+End;
 ```
 ![Screenshot 2025-02-15 094626](https://github.com/user-attachments/assets/5a999ade-0c62-4aae-9912-df789c139c99)
 
 
 
 ```SQL
--- internal floor area vs jobs correlation
-SELECT 
-    ROUND(
-        (SUM(internal_floorarea * total_jobs) - (SUM(internal_floorarea) * SUM(total_jobs)) / COUNT(*)) /
-        (SQRT(
-            (SUM(internal_floorarea * internal_floorarea) - (SUM(internal_floorarea) * SUM(internal_floorarea)) / COUNT(*)) * 
-            (SUM(total_jobs * total_jobs) - (SUM(total_jobs) * SUM(total_jobs)) / COUNT(*))
+-- Internal floor area vs jobs correlation
+Select 
+    Round(
+        (Sum(internal_floorarea * total_jobs) - (Sum(internal_floorarea) * Sum(total_jobs)) / Count(*)) /
+        (Sqrt(
+            (Sum(internal_floorarea * internal_floorarea) - (Sum(internal_floorarea) * Sum(internal_floorarea)) / Count(*)) * 
+            (Sum(total_jobs * total_jobs) - (Sum(total_jobs) * Sum(total_jobs)) / Count(*))
         ))
-    , 2) AS floor_jobs_corr,
+    , 2) as floor_jobs_corr,
 
-    ROUND(
-        (SUM(internal_floorarea * businesses) - (SUM(internal_floorarea) * SUM(businesses)) / COUNT(*)) /
-        (SQRT(
-            (SUM(internal_floorarea * internal_floorarea) - (SUM(internal_floorarea) * SUM(internal_floorarea)) / COUNT(*)) * 
-            (SUM(businesses * businesses) - (SUM(businesses) * SUM(businesses)) / COUNT(*))
+    Round(
+        (Sum(internal_floorarea * businesses) - (Sum(internal_floorarea) * Sum(businesses)) / Count(*)) /
+        (Sqrt(
+            (Sum(internal_floorarea * internal_floorarea) - (Sum(internal_floorarea) * Sum(internal_floorarea)) / Count(*)) * 
+            (Sum(businesses * businesses) - (Sum(businesses) * Sum(businesses)) / Count(*))
         ))
-    , 2) AS floor_businesses_corr
+    , 2) as floor_businesses_corr;
 ```
 ![Screenshot 2025-02-15 094648](https://github.com/user-attachments/assets/581b5b4b-21e7-4301-901e-bbac445f2fa4)
 
@@ -297,16 +298,16 @@ SELECT
 ```SQL
 -- Suburb vs Jobs & businesses
 
-FROM floor_space_22;
+From floor_space_22;
 
 Select
 	suburb,
 	Sum(total_jobs),
-    sum(businesses),
-	round(avg(internal_floorarea), 2) as avg_floorarea
+    Sum(businesses),
+	Round(avg(internal_floorarea), 2) as avg_floorarea
 From floor_space_22
 Group by suburb
-order by sum(total_jobs) desc;
+Order by sum(total_jobs) desc;
 ```
 ![Screenshot 2025-02-15 101309](https://github.com/user-attachments/assets/14c784a9-d647-4f22-a603-6d05c00e7cc1)
 
@@ -343,57 +344,57 @@ Limit 100;
 
 
 ```SQL
-SELECT 
+Select
     floor_space_22.blocknum, 
     floor_space_07.PartTimeEmployees AS parttime_2007,
     floor_space_12.PartTimeEmployees AS parttime_2012,
     floor_space_17.PartTimeEmployees AS parttime_2017,
     floor_space_22.Total_PartTime_Jobs AS parttime_2022, 
-    CONCAT(ROUND(COALESCE((floor_space_22.Total_PartTime_Jobs - floor_space_07.PartTimeEmployees) / NULLIF(floor_space_07.PartTimeEmployees, 1) * 100, 0), 1), '%') AS parttimejob_growth_2007_2022_pct,
+    Concat(Round(Coalesce((floor_space_22.Total_PartTime_Jobs - floor_space_07.PartTimeEmployees) / NULLIF(floor_space_07.PartTimeEmployees, 1) * 100, 0), 1), '%') AS parttimejob_growth_2007_2022_pct,
     floor_space_22.suburb
-FROM floor_space_22
-INNER JOIN floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
-INNER JOIN floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
-INNER JOIN floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
-ORDER BY blocknum, suburb;
+From floor_space_22
+Inner join floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
+Inner join floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
+Inner join floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
+Order by blocknum, suburb;
 ```
 ![Screenshot 2025-02-20 132627](https://github.com/user-attachments/assets/b721f5af-518d-40aa-b9ac-425a18f2740f)
 
 
 
 ```SQL
-SELECT 
+Select 
     floor_space_22.blocknum, 
     floor_space_07.FullTimeEmployees AS fulltime_2007,
     floor_space_12.FullTimeEmployees AS fulltime_2012,
     floor_space_17.FullTimeEmployees AS fulltime_2017,
     floor_space_22.Total_FullTime_Jobs AS fulltime_2022,
-    CONCAT(ROUND(COALESCE((floor_space_22.Total_FullTime_Jobs - floor_space_07.FullTimeEmployees) / NULLIF(floor_space_07.FullTimeEmployees, 1) * 100, 0), 1), '%') AS fulltimejob_growth_2007_2022_pct,
+    Concat(Round(Coalesce((floor_space_22.Total_FullTime_Jobs - floor_space_07.FullTimeEmployees) / NULLIF(floor_space_07.FullTimeEmployees, 1) * 100, 0), 1), '%') AS fulltimejob_growth_2007_2022_pct,
     floor_space_22.suburb
-FROM floor_space_22
-INNER JOIN floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
-INNER JOIN floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
-INNER JOIN floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
-ORDER BY blocknum, suburb;
+From floor_space_22
+Inner join floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
+Inner join floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
+Inner join floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
+Order by blocknum, suburb;
 ```
 ![Screenshot 2025-02-20 132605](https://github.com/user-attachments/assets/57faec11-8287-4697-a952-51b3ab45e0a6)
 
 
 
 ```SQL
-SELECT 
+Select 
     floor_space_22.blocknum, 
     floor_space_07.TotalEmployees AS total_jobs_2007,
     floor_space_12.TotalEmployees AS total_jobs_2012,
     floor_space_17.TotalEmployees AS total_jobs_2017,
     floor_space_22.total_jobs as total_jobs_2022,
-    CONCAT(ROUND(COALESCE((floor_space_22.Total_Jobs - floor_space_07.TotalEmployees) / NULLIF(floor_space_07.TotalEmployees, 1) * 100, 0), 1), '%') AS Totaljob_growth_2007_2022_pct,
+    Concat(Round(Coalesce((floor_space_22.Total_Jobs - floor_space_07.TotalEmployees) / NULLIF(floor_space_07.TotalEmployees, 1) * 100, 0), 1), '%') AS Totaljob_growth_2007_2022_pct,
     floor_space_22.suburb
-FROM floor_space_22
-INNER JOIN floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
-INNER JOIN floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
-INNER JOIN floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
-ORDER BY blocknum, suburb;
+From floor_space_22
+Inner join floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
+Inner join floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
+Inner join floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
+Order by blocknum, suburb;
 ```
 ![Screenshot 2025-02-20 132254](https://github.com/user-attachments/assets/83931c6a-ac69-48c6-b176-9b637f1f10dd)
 
@@ -401,72 +402,102 @@ ORDER BY blocknum, suburb;
 
 
 ```SQL
-SELECT 
+Select
     floor_space_22.blocknum, 
     floor_space_07.InternalFloorArea AS total_space_2007,
     floor_space_12.InternalFloorArea AS total_space_2012,
     floor_space_17.InternalFloorArea AS total_space_2017,
     floor_space_22.Internal_FloorArea AS total_space_2022,
-    CONCAT(ROUND(COALESCE((floor_space_22.Internal_FloorArea - floor_space_07.InternalFloorArea) / NULLIF(floor_space_07.InternalFloorArea, 1) * 100, 0), 1), '%') AS floorspace_growth_2007_2022_pct,
+    Concat(Round(Coalesce((floor_space_22.Internal_FloorArea - floor_space_07.InternalFloorArea) / NULLIF(floor_space_07.InternalFloorArea, 1) * 100, 0), 1), '%') AS floorspace_growth_2007_2022_pct,
     floor_space_22.suburb
-FROM floor_space_22
-INNER JOIN floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
-INNER JOIN floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
-INNER JOIN floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
-ORDER BY blocknum, suburb;
+From floor_space_22
+Inner join floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
+Inner join floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
+Inner join floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
+Order by blocknum, suburb;
 ```
 ![Screenshot 2025-02-20 132543](https://github.com/user-attachments/assets/1ac010d6-9d70-4def-a4bf-6df8b8f9a986)
 
 
 
 ```SQL
-SELECT 
+Select
     floor_space_22.blocknum, 
     floor_space_07.Businesses AS total_businesses_2007,
     floor_space_12.Businesses AS total_businesses_2012,
     floor_space_17.Businesses AS total_businesses_2017,
     floor_space_22.Businesses AS total_businesses_2022,
-    CONCAT(ROUND(COALESCE((floor_space_22.Businesses - floor_space_07.Businesses) / NULLIF(floor_space_07.Businesses, 1) * 100, 0), 1), '%') AS floorspace_growth_2007_2022_pct,
+    Concat(Round(Coalesce((floor_space_22.Businesses - floor_space_07.Businesses) / NULLIF(floor_space_07.Businesses, 1) * 100, 0), 1), '%') AS floorspace_growth_2007_2022_pct,
     floor_space_22.suburb
-FROM floor_space_22
-INNER JOIN floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
-INNER JOIN floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
-INNER JOIN floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
-ORDER BY blocknum, suburb;
+From floor_space_22
+Inner join floor_space_17 ON floor_space_22.blocknum = floor_space_17.blocknum
+Inner join floor_space_12 ON floor_space_22.blocknum = floor_space_12.blocknum
+Inner join floor_space_07 ON floor_space_22.blocknum = floor_space_07.blocknum
+Order by blocknum, suburb;
 ```
 ![Screenshot 2025-02-20 132903](https://github.com/user-attachments/assets/4ca89f64-b7c1-49ef-a4c4-11091b713f62)
 
 
 
 ```SQL
-SELECT 
+Select 
     fs22.blocknum,
-    coalesce(fs07.totalemployees, 0) AS jobs_2007,
-    coalesce(fs12.totalemployees, 0) AS jobs_2012, 
-    coalesce(fs17.totalemployees, 0) AS jobs_2017, 
-    fs22.total_jobs AS jobs_2022,
+    Coalesce(fs07.totalemployees, 0) as jobs_2007,
+    Coalesce(fs12.totalemployees, 0) as jobs_2012, 
+    Coalesce(fs17.totalemployees, 0) as jobs_2017, 
+    fs22.total_jobs as jobs_2022,
     fs22.suburb,
     
-   CASE 
-        WHEN COALESCE(fs07.totalemployees, 0) = 0 
-             THEN CONCAT((fs22.total_jobs - 0), '%') -- Growth relative to new jobs
-        ELSE CONCAT(ROUND(((fs22.total_jobs - fs07.totalemployees) / fs07.totalemployees) * 100, 1), '%')
-    END AS totaljob_growth_2007_2022,
-    case
-        WHEN (fs22.total_jobs > fs17.totalemployees AND fs17.totalemployees > fs12.totalemployees AND fs12.totalemployees > fs07.totalemployees)
-        THEN 'Consistent Growth'
-        ELSE 'Fluctuating'
-    END AS growth_pattern
-FROM floor_space_22 fs22
-LEFT JOIN floor_space_17 fs17 ON fs22.blocknum = fs17.blocknum
-LEFT JOIN floor_space_12 fs12 ON fs22.blocknum = fs12.blocknum
-LEFT JOIN floor_space_07 fs07 ON fs22.blocknum = fs07.blocknum
-ORDER BY jobs_2022 DESC;
+    Case 
+        When Coalesce(fs07.totalemployees, 0) = 0 
+             Then Concat((fs22.total_jobs - 0), '%') -- Growth relative to new jobs
+        Else Concat(Round(((fs22.total_jobs - fs07.totalemployees) / fs07.totalemployees) * 100, 1), '%')
+    End as totaljob_growth_2007_2022,
+    Case
+        When (fs22.total_jobs > fs17.totalemployees and fs17.totalemployees > fs12.totalemployees and fs12.totalemployees > fs07.totalemployees)
+        Then 'Consistent Growth'
+        Else 'Fluctuating'
+    End as growth_pattern
+From floor_space_22 fs22
+Left join floor_space_17 fs17 on fs22.blocknum = fs17.blocknum
+Left join floor_space_12 fs12 on fs22.blocknum = fs12.blocknum
+Left join floor_space_07 fs07 on fs22.blocknum = fs07.blocknum
+Order by jobs_2022 desc;
 ```
 ![Screenshot 2025-03-14 152254](https://github.com/user-attachments/assets/c9b4d728-79bc-4f15-bd3e-746f1350ae13)
 
 
 ### Data Visualization 
+
+![Screenshot 2025-03-12 125149](https://github.com/user-attachments/assets/566b1076-8eed-426b-9a17-85f6a873c52b)
+
+
+
+![Screenshot 2025-03-12 125258](https://github.com/user-attachments/assets/3f481ead-c219-4e17-90dc-68de9a60b07e)
+
+
+
+![Screenshot 2025-03-12 125325](https://github.com/user-attachments/assets/97c7a8b8-7a09-4110-82f0-e3f3e1aefe19)
+
+
+
+![Screenshot 2025-03-15 113710](https://github.com/user-attachments/assets/fc662122-0e60-4bca-bb55-4cdc166c0d38)
+
+
+
+![Screenshot 2025-03-12 125619](https://github.com/user-attachments/assets/2d6b9bde-df1b-46dd-816b-439c42564cb6)
+
+
+
+![Screenshot 2025-03-12 125726](https://github.com/user-attachments/assets/156e2e69-2815-41ae-82cf-0e744f7269f0)
+
+
+
+![Screenshot 2025-03-15 131734](https://github.com/user-attachments/assets/1c8550b7-d152-41f7-879c-3f1709bac6f6)
+
+
+
+![Screenshot 2025-03-12 125756](https://github.com/user-attachments/assets/af5bd3f6-78aa-45e0-b91b-f9b19146a9c6)
 
 
 ## Key Insights
