@@ -45,16 +45,25 @@ This dataset provides a comprehensive snapshot of Sydney’s business landscape 
 This structured dataset allows for an in-depth analysis of business growth, employment density, and commercial development trends. By tracking changes over time, we can assess how industries have expanded or declined, identify shifts in workforce distribution, and explore the relationship between employment density and available commercial space. The dataset serves as a valuable foundation for understanding economic shifts, urban planning strategies, and the evolving structure of Sydney’s business ecosystem.🏙️
 
 ## Dataset Attributes Overview
-OBJECTID: A unique identifier for each record in the dataset.
-BLOCKNUM: The unique block number representing a specific geographical area.
-InternalFloorArea: The total internal floor space (measured in square meters) allocated for commercial and employment purposes.
-FullTimeEmployees: The total number of full-time employees working in the block.
-PartTimeEmployees: The total number of part-time employees working in the block.
-TotalEmployees: The combined count of full-time and part-time employees in the block.
-Businesses: The total number of businesses operating within the block.
-Shape__Area: The geographic area (in square meters) of the block, representing its physical size.
-Shape__Length: The perimeter length (in meters) of the block’s geographic boundary.
-Perimeter(2022): The perimeter size (in meters) of the block’s geographic boundary.
+- OBJECTID: A unique identifier for each record in the dataset.
+
+- BLOCKNUM: The unique block number representing a specific geographical area.
+
+- InternalFloorArea: The total internal floor space (measured in square meters) allocated for commercial and employment purposes.
+
+- FullTimeEmployees: The total number of full-time employees working in the block.
+
+- PartTimeEmployees: The total number of part-time employees working in the block.
+
+- TotalEmployees: The combined count of full-time and part-time employees in the block.
+
+- Businesses: The total number of businesses operating within the block.
+
+- Shape__Area: The geographic area (in square meters) of the block, representing its physical size.
+
+- Shape__Length: The perimeter length (in meters) of the block’s geographic boundary.
+
+- Perimeter(2022): The perimeter size (in meters) of the block’s geographic boundary.
 
 ## Tools and Libraries
 - MySQL: Data processing and cleaning.
