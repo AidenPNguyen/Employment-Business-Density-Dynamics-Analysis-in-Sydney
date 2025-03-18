@@ -410,7 +410,7 @@ Order by blocknum, suburb;
 ```
 ![Screenshot 2025-02-20 132627](https://github.com/user-attachments/assets/b721f5af-518d-40aa-b9ac-425a18f2740f)
 
-
+We used these queries to track the growth of part-time and full-time jobs across different blocks from 2007 to 2022. Datasets were joined from multiple years (2007, 2012, 2017, and 2022) based on blocknum and retrieve the number of employees for each year. The parttimejob_growth_2007_2022_pct and fulltimejob_growth_2007_2022_pct fields calculate the percentage growth in jobs over this period, ensuring that division by zero is avoided using NULLIF. The results are then sorted by block and suburb, providing a clear view of employment trends over time.
 
 ```SQL
 Select 
@@ -448,7 +448,7 @@ Order by blocknum, suburb;
 ```
 ![Screenshot 2025-02-20 132254](https://github.com/user-attachments/assets/83931c6a-ac69-48c6-b176-9b637f1f10dd)
 
-
+These queries analyze the growth and trends of three key attributes—total jobs, internal floor space, and businesses—from 2007 to 2022. By joining data from different years based on blocknum, this can help retrieve historical values and calculate percentage growth over time. The Totaljob_growth_2007_2022_pct, floorspace_growth_2007_2022_pct, and business growth percentages help in understanding how employment, physical infrastructure, and business activity have evolved. The use of Coalesce and NULLIF ensures robust calculations by handling potential missing or zero values. By visualizing these attributes, we can witness growth patterns or fluctuating trends and explore potential correlations among them
 
 
 ```SQL
@@ -514,8 +514,12 @@ Left join floor_space_12 fs12 on fs22.blocknum = fs12.blocknum
 Left join floor_space_07 fs07 on fs22.blocknum = fs07.blocknum
 Order by jobs_2022 desc;
 ```
+
 ![Screenshot 2025-03-14 152254](https://github.com/user-attachments/assets/c9b4d728-79bc-4f15-bd3e-746f1350ae13)
 
+We wanted to find out the job growth trends from 2007 to 2022 across different blocks, handling missing values with Coalesce. In order to do this, we calculate percentage job growth since 2007 and categorizes each block's trend as either "Consistent Growth" (if jobs increased steadily across all periods) or "Fluctuating" (if there were ups and downs). The results help in identifying areas with stable employment expansion versus those experiencing irregular job trends, which is valuable for workforce planning and economic analysis.
+
+These insights are crucial for urban planning, economic development, and policy-making, allowing stakeholders to identify key areas of expansion or decline.
 
 ### Data Visualization 
 
