@@ -98,7 +98,7 @@ From floor_space_22;
 ```
 ![Screenshot 2025-02-13 104257](https://github.com/user-attachments/assets/457b90df-dd6c-4faa-844f-27d07bb883bf)
 
-
+This query checks for missing (NULL) values in the floor_space_22 dataset by counting how many NULLs exist in each column. The output shows a total of 2232 rows, with 0 NULL values in all columns, meaning the dataset has no missing data.
 
 ```SQL
 -- Renaming "OBJECTID" column
@@ -110,6 +110,8 @@ Alter table floor_space_22
 Drop column BLOCKTXT;
 ```
 
+We first renamed the "OBJECTID" column to "Num" for better readability and dropped the "BLOCKTXT" column as it was not needed in our analysis. These changes help streamline the dataset and make it easier to work with.
+
 ```SQL
 -- Checking duplicated values
 Select *, count(*) as duplicated_count
@@ -119,7 +121,7 @@ Having count(*) > 1;
 ```
 ![Screenshot 2025-02-13 110654](https://github.com/user-attachments/assets/5c52e00d-c1d3-4455-9d42-6fa64cbac411)
 
-
+Next, we checked for duplicate values by grouping the data based on key attributes and counting occurrences. The output showed no duplicate records, this means that all rows in the dataset are unique
 
 ```SQL
 -- Adding column
@@ -144,7 +146,7 @@ Set suburb =
 ```
 ![Screenshot 2025-02-13 110953](https://github.com/user-attachments/assets/7d4c6540-97a9-4271-8f47-0a3dc977de1c)
 
-
+We added a new column called "suburb" to the dataset and assigned suburb names based on the BLOCKNUM ranges. This categorization helps group data by location, making it easier to analyze growth patterns across different suburbs.
 
 ```SQL
 -- Checking for "Unknown" values in suburb column
@@ -158,6 +160,7 @@ From floor_space_22
 Where suburb = "Unknown"
 Order By blocknum;
 ```
+Then we checked for any "Unknown" values in the suburb column by filtering blocks with more than 50 businesses and reviewing unassigned block numbers.
 
 ```SQL
 Update floor_space_22
@@ -176,70 +179,79 @@ Set suburb =
         Else 'Unknown'  
     End;
 ```
+After that, we updated the column again. 
 
 ### Exploratory Data Analysis (EDA)
+#### 2022 Dataset
 ```SQL
--- Statistical analysis (min, max, mean value and standard deviation)
-Select 'Min Internal Floor Area' as attribute, Min(internal_floorarea) as value from floor_space_22
-Union all
-Select 'Max Internal Floor Area', Max(internal_floorarea) from floor_space_22
-Union all
-Select 'Avg Internal Floor Area', Avg(internal_floorarea) from floor_space_22
-Union all
-Select 'Min Internal Floor Area' as attribute, Stddev_samp(internal_floorarea) as value from floor_space_22
-Union all
-Select 'Min Block', Min(blocknum) from floor_space_22
-Union all
-Select 'Max Block', Max(blocknum) from floor_space_22
-Union all
-Select 'Avg Block', Avg(blocknum) from floor_space_22
-Union all
-Select 'Min Internal Floor Area' as attribute, Stddev_samp(blocknum) as value from floor_space_22
-Union all
-Select 'Min Part-Time Jobs', Min(total_parttime_jobs) from floor_space_22
-Union all
-Select 'Max Part-Time Jobs', Max(total_parttime_jobs) from floor_space_22
-Union all
-Select 'Avg Part-Time Jobs', Avg(total_parttime_jobs) from floor_space_22
-Union all
-Select 'Min Internal Floor Area' as attribute, Stddev_samp(total_parttime_jobs) as value from floor_space_22
-Union all
-Select 'Min Full-Time Jobs', Min(total_fulltime_jobs) from floor_space_22
-Union all
-Select 'Max Full-Time Jobs', Max(total_fulltime_jobs) from floor_space_22
-Union all
-Select 'Avg Full-Time Jobs', Avg(total_fulltime_jobs) from floor_space_22
-Union all
-Select 'Min Internal Floor Area' as attribute, Stddev_samp(total_fulltime_jobs) as value from floor_space_22
-Union all
-Select 'Min Total Jobs', Min(total_jobs) from floor_space_22
-Union all
-Select 'Max Total Jobs', Max(total_jobs) from floor_space_22
-Union all
-Select 'Avg Total Jobs', Avg(total_jobs) from floor_space_22
-Union all
-Select 'Min Internal Floor Area' as attribute, Stddev_samp(total_jobs) as value from floor_space_22
-Union all
-Select 'Min Businesses', Min(businesses) from floor_space_22
-Union all
-Select 'Max Businesses', Max(businesses) from floor_space_22
-Union all
-Select 'Avg Businesses', Avg(businesses) from floor_space_22
-Union all
-Select 'Min Internal Floor Area' as attribute, Stddev_samp(businesses) as value from floor_space_22
-Union all
-Select 'Min Perimeter', Min(perimeter) from floor_space_22
-Union all
-Select 'Max Perimeter', Max(perimeter) from floor_space_22
-Union all
-Select 'Avg Perimeter', Avg(perimeter) from floor_space_22
-Union all
-Select 'Min Internal Floor Area' as attribute, Stddev_samp(perimeter) as value from floor_space_22;
+-- Statistical analysis
+-- Min, max, avg floor area
+SELECT 'Min Internal Floor Area' AS attribute, MIN(internal_floorarea) AS value FROM floor_space_22
+UNION ALL
+SELECT 'Max Internal Floor Area', MAX(internal_floorarea) FROM floor_space_22
+UNION ALL
+SELECT 'Avg Internal Floor Area', AVG(internal_floorarea) FROM floor_space_22
+UNION ALL
+SELECT 'Internal Floor Area Standard Deviation' AS attribute, stddev_samp(internal_floorarea) AS value FROM floor_space_22
+UNION ALL
+SELECT 'Min Block', MIN(blocknum) FROM floor_space_22
+UNION ALL
+SELECT 'Max Block', MAX(blocknum) FROM floor_space_22
+UNION ALL
+SELECT 'Avg Block', AVG(blocknum) FROM floor_space_22
+UNION ALL
+SELECT 'Block Standard Deviation' AS attribute, stddev_samp(blocknum) AS value FROM floor_space_22
+UNION ALL
+SELECT 'Min Part-Time Jobs', MIN(total_parttime_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Max Part-Time Jobs', MAX(total_parttime_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Avg Part-Time Jobs', AVG(total_parttime_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Part-Time Jobs Standard Deviation' AS attribute, stddev_samp(Total_PartTime_Jobs) AS value FROM floor_space_22
+UNION ALL
+SELECT 'Min Full-Time Jobs', MIN(total_fulltime_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Max Full-Time Jobs', MAX(total_fulltime_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Avg Full-Time Jobs', AVG(total_fulltime_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Full-Time Jobs Standard Deviation' AS attribute, stddev_samp(total_fulltime_jobs) AS value FROM floor_space_22
+UNION ALL
+SELECT 'Min Total Jobs', MIN(total_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Max Total Jobs', MAX(total_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Avg Total Jobs', AVG(total_jobs) FROM floor_space_22
+UNION ALL
+SELECT 'Total Jobs Standard Deviation' AS attribute, stddev_samp(total_jobs) AS value FROM floor_space_22
+UNION ALL
+SELECT 'Min Businesses', MIN(businesses) FROM floor_space_22
+UNION ALL
+SELECT 'Max Businesses', MAX(businesses) FROM floor_space_22
+UNION ALL
+SELECT 'Avg Businesses', AVG(businesses) FROM floor_space_22
+UNION ALL
+SELECT 'Businesses Standard Deviation' AS attribute, stddev_samp(Businesses) AS value FROM floor_space_22
+UNION ALL
+SELECT 'Min Perimeter', MIN(perimeter) FROM floor_space_22
+UNION ALL
+SELECT 'Max Perimeter', MAX(perimeter) FROM floor_space_22
+UNION ALL
+SELECT 'Avg Perimeter', AVG(perimeter) FROM floor_space_22
+UNION ALL
+SELECT 'Perimeter Standard Deviation' AS attribute, stddev_samp(PERIMETER) AS value FROM floor_space_22;
 ```
-![Screenshot 2025-03-14 153856](https://github.com/user-attachments/assets/5edf9052-8dbb-4ede-a155-316aab201ac9)
+![Screenshot 2025-03-18 120126](https://github.com/user-attachments/assets/52739cd4-1aa3-471f-9efd-43af9f78e14d)
 
+This query calculates key statistical measures (minimum, maximum, average, and standard deviation) for multiple attributes in the dataset, such as internal floor area, block numbers, jobs, businesses, and perimeter. It uses UNION ALL to combine multiple SELECT statements into a single result.
 
-
+- Internal Floor Area ranges from 0 to 438,193.105, with an average of 34,066.31 and a high standard deviation (46,235.66), indicating large variations.
+- Block Numbers range from 1 to 1,408, with an average of 641.55 and moderate variation (373.42).
+- Part-Time Jobs and Full-Time Jobs show significant variation, with max values of 2,562 and 18,068, respectively. The standard deviation is particularly high for Full-Time Jobs (1,174.78).
+- Total Jobs range from 0 to 20,284, averaging 465.80, with a standard deviation of 1,353.74, showing high dispersion.
+- Businesses have an average of 19.37, but the standard deviation (40.96) suggests some areas have significantly more businesses.
+Perimeter values range from 117.75 to 5,606.76, showing large variations in plot sizes.
 
 ```SQL
 Select
@@ -254,10 +266,6 @@ Order by jobs_per_sqm desc
 Limit 20;
 ```
 
-
-
-
-
 ```SQL
 Alter table floor_space_22 ADD COLUMN jobs_sqm float;
 
@@ -270,7 +278,9 @@ End;
 ```
 ![Screenshot 2025-02-15 094626](https://github.com/user-attachments/assets/5a999ade-0c62-4aae-9912-df789c139c99)
 
+We calculated jobs per square meter (jobs_per_sqm) by dividing total jobs by internal floor area, filtering out entries with zero floor area. The top 20 records with the highest job density were retrieved. Then, we added a new column jobs_sqm to store this value and updated it using a conditional formula to handle cases where floor area or jobs were zero.
 
+> The output displays the top 20 records with the highest jobs per square meter (jobs_per_sqm). The highest value is 0.17 jobs/sqm, meaning this space was leased to one business that has the highest job density despite its small floor area. Larger spaces tend to have lower job densities, with most values clustering around 0.04 to 0.09 jobs/sqm. The number of businesses varies significantly, indicating that job density is not solely dependent on business count but also on floor area utilization.
 
 ```SQL
 -- Internal floor area vs jobs correlation
@@ -293,7 +303,9 @@ Select
 ```
 ![Screenshot 2025-02-15 094648](https://github.com/user-attachments/assets/581b5b4b-21e7-4301-901e-bbac445f2fa4)
 
+Next, we calculated the Pearson correlation coefficients between internal floor area and total jobs (floor_jobs_corr), as well as internal floor area and businesses (floor_businesses_corr). 
 
+> The results show a strong positive correlation (0.78) between floor area and total jobs, indicating that larger spaces tend to accommodate more jobs. Similarly, there is a moderate positive correlation (0.67) between floor area and businesses, suggesting that larger spaces generally house more businesses, but the relationship is not as strong as with jobs.
 
 ```SQL
 -- Suburb vs Jobs & businesses
@@ -311,8 +323,20 @@ Order by sum(total_jobs) desc;
 ```
 ![Screenshot 2025-02-15 101309](https://github.com/user-attachments/assets/14c784a9-d647-4f22-a603-6d05c00e7cc1)
 
+We summarized suburbs by total jobs, businesses, and average floor area. Then we groups data by suburb, calculates totals and averages, and orders the results by the highest number of jobs.
+- Sydney CBD: Dominates with 358,683 total jobs, 12,242 businesses, and an average floor area of 70,378.34 m².
 
+- Darlinghurst: Trails behind with 64,882 jobs, 3,351 businesses, and an average floor area of 21,845.34 m².
 
+- Redfern, Erskineville: 38,911 jobs, 1,733 businesses, and 19,068.69 m² average floor area.
+
+- Alexandria: Notable for 27,725 jobs, 1,639 businesses, but a large 32,636.19 m² average floor area, indicating industrial use.
+
+- Zetland: 9,881 jobs, 884 businesses, with 16,399.42 m² average floor area.
+
+- Moore Park: 7,345 jobs, 632 businesses, and 13,622.53 m² average floor area.
+
+> The output shows Sydney CBD as the dominant hub with the highest jobs, businesses, and a large floor area. Suburbs like Darlinghurst and Redfern trail with fewer jobs and businesses but maintain decent average floor areas. Alexandria stands out with spacious areas despite lower job numbers, suggesting possible industrial use.
 
 ```SQL
 -- Full vs part time jobs
@@ -324,10 +348,17 @@ Where Total_fulltime_jobs > Total_parttime_jobs
 order by Total_fulltime_jobs desc
 Limit 100;
 ```
+We wanted to find out and compare the suburbs' building full-time and part-time job employments by retrieving data for blocks in suburbs where the number of full-time jobs exceeds part-time jobs for the first query and vice verca for the second query. We selected block number, suburb, total jobs, full-time jobs, and part-time jobs, ordering the results by full-time jobs in descending order for first query and part-time jobs in the same order in the second query, then limiting the output to the top 100 rows.
+
 ![Screenshot 2025-02-15 161207](https://github.com/user-attachments/assets/255ee0df-9784-4f71-b694-e05bf5e7f697)
 
+- Redfern, Erskineville leads with 18,068 full-time jobs and only 2,216 part-time jobs, suggesting a predominance of full-time employment in that area.
 
+- Several entries for Sydney CBD are listed, with full-time jobs ranging from 9,933 to 5,155, significantly outnumbering part-time jobs.
 
+- Camperdown also stands out with 10,289 full-time jobs and just 633 part-time jobs.
+
+> This reflects a trend where central and employment-heavy suburbs like Sydney CBD dominate in full-time job availability
 
 ```SQL
 Select 
@@ -339,9 +370,19 @@ Limit 100;
 ```
 ![Screenshot 2025-02-15 161225](https://github.com/user-attachments/assets/a7b587d2-9205-48f3-9be0-394ca717dd13)
 
+- Glebe: Leads with 1,258 part-time jobs and only 471 full-time jobs, showing a significant preference for part-time employment.
 
+- Sydney CBD: Multiple blocks have more part-time jobs, including one with 1,086 part-time jobs versus 250 full-time jobs and another with 805 part-time jobs compared to 377 full-time jobs. This suggests a mix of part-time opportunities within the central business area.
 
+- Moore Park: Notable with 772 part-time jobs and 597 full-time jobs, reflecting a balance but leaning toward part-time work.
 
+- Darlinghurst: One block has 299 part-time jobs to just 125 full-time jobs, showing a clear trend toward part-time employment in that area.
+
+- Alexandria: Contains a block with 218 part-time jobs compared to 157 full-time jobs.
+
+> This output highlights suburbs where part-time jobs dominate, potentially indicating industries like retail or hospitality that favor flexible roles.
+
+#### 2007-2022 Datasets
 
 ```SQL
 Select
