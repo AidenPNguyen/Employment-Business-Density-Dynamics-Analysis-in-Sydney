@@ -523,7 +523,7 @@ These insights are crucial for urban planning, economic development, and policy-
 
 ### Data Visualization 
 
-![Screenshot 2025-03-12 125149](https://github.com/user-attachments/assets/566b1076-8eed-426b-9a17-85f6a873c52b)
+![Screenshot 2025-03-18 165151](https://github.com/user-attachments/assets/48cbba7c-6a76-4938-b827-91350e14db27)
 
 
 
@@ -535,7 +535,8 @@ These insights are crucial for urban planning, economic development, and policy-
 
 
 
-![Screenshot 2025-03-15 113710](https://github.com/user-attachments/assets/fc662122-0e60-4bca-bb55-4cdc166c0d38)
+![Screenshot 2025-03-15 113710](https://github.com/user-attachments/assets/bf292e7f-9e2e-4ac3-8b75-0774582b8c5f)
+
 
 
 
