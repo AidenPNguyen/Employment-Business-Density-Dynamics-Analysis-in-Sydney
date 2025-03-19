@@ -523,50 +523,77 @@ These insights are crucial for urban planning, economic development, and policy-
 
 ### Data Visualization 
 
+
 ![Screenshot 2025-03-18 165151](https://github.com/user-attachments/assets/48cbba7c-6a76-4938-b827-91350e14db27)
+
 
 The bar chart (left) breaks down the number of full-time (purple) and part-time (cyan) jobs by suburb. Sydney CBD dominates with the highest employment, particularly in full-time jobs (261,382), followed by Redfern, Darlinghurst, and Alexandria. Other suburbs have significantly lower job counts, with part-time jobs generally being much lower than full-time jobs across most areas.
 
 The pie chart (right) visualizes the total job distribution by suburb, showing that Sydney CBD accounts for nearly 70% of all jobs. Other suburbs contribute much smaller shares, with the next largest, Redfern, holding just around 9%. This highlights Sydney CBD as the primary employment hub, while other suburbs play relatively smaller roles in job distribution
 
+
 ![Screenshot 2025-03-12 125258](https://github.com/user-attachments/assets/3f481ead-c219-4e17-90dc-68de9a60b07e)
 
+
 The first chart, which tracks the number of businesses across six key areas—Sydney CBD, Redfern, Erskineville and Macdonaldtown, Glebe, Darlinghurst and Surry Hills, and Alexandria—highlights a significant transformation in the commercial landscape between 2007 and 2022. Sydney CBD remains the dominant hub, reaching a peak of 13,830 businesses in 2017 before slightly declining to 12,165 in 2022. 
-> This leadership position is largely due to its status as the financial, accounting, hospitality, and entertainment center of New South Wales, attracting a diverse range of businesses that benefit from the area's strong economic infrastructure and global connectivity. Meanwhile, suburbs such as Alexandria, Darlinghurst, and Surry Hills have experienced steady business growth, reflecting broader urban development trends. These shifts are driven by infrastructure improvements, enhanced transport connectivity, and strategic investments that encourage economic activity beyond the CBD (Economic Development Strategy 2025-2035, p. 32).
+> This leadership position is largely due to its status as the financial, accounting, hospitality, and entertainment center of New South Wales, attracting a diverse range of businesses that benefit from the area's strong economic infrastructure and global connectivity. Meanwhile, suburbs such as Alexandria, Darlinghurst, and Surry Hills have experienced steady business growth, reflecting broader urban development trends. These shifts are driven by infrastructure improvements, enhanced transport connectivity, and strategic investments that encourage economic activity beyond the CBD (City Of Sydney Council, 2025).
 
 The second chart, which examines job growth across multiple suburbs—including Alexandria, Camperdown, Darlinghurst and Surry Hills, Glebe, Moore Park, Potts Point, Redfern, Erskineville and Macdonaldtown, and Zetland—further reinforces this trend. Alexandria, in particular, has shown significant employment growth, with job numbers rising from 30,992 in 2007 to 42,367 in 2022. Similarly, Camperdown exhibited strong job expansion, reaching approximately 30,527 jobs in 2017 before experiencing a slight decline. 
-> These employment trends highlight the impact of strategic investments in suburban infrastructure and deliberate policies aimed at decentralizing economic activity from Sydney CBD. The combination of private-sector expansion and government-led urban planning initiatives has positioned these suburbs as emerging economic hubs, complementing Sydney’s central business district while fostering broader regional growth with 1 to 2 industries center focusing on each suburbs(Economic Development Strategy 2025-2035, p. 32).
+> These employment trends highlight the impact of strategic investments in suburban infrastructure and deliberate policies aimed at decentralizing economic activity from Sydney CBD. The combination of private-sector expansion and government-led urban planning initiatives has positioned these suburbs as emerging economic hubs, complementing Sydney’s central business district while fostering broader regional growth with 1 to 2 industries center focusing on each suburbs (City Of Sydney Council, 2025).
+
 
 ![Screenshot 2025-03-12 125325](https://github.com/user-attachments/assets/97c7a8b8-7a09-4110-82f0-e3f3e1aefe19)
 
+
 The left chart presents the total job growth in Sydney CBD from 2007 to 2022, showing a significant increase from 282,000 jobs in 2007 to 316,000 in 2012. The peak was reached in 2017 with 355,000 jobs before slightly declining to 354,000 in 2022, reflecting the impact of economic shifts, including the COVID-19 pandemic. 
-> This trend aligns with Sydney’s strategic focus on maintaining its role as a commercial hub through infrastructure investments, business incentives, and improved transport networks. The growth indicates the success of policies that support office space expansion, business innovation, and industry diversification​
+> This trend aligns with Sydney’s strategic focus on maintaining its role as a commercial hub through infrastructure investments, business incentives, and improved transport networks (City Of Sydney Council, 2025). The growth indicates the success of policies that support office space expansion, business innovation, and industry diversification​.
 
 The right treemap visualizes employment density by identifying the top 20 buildings with the highest jobs per square meter in 2022. The highest employment densities are found in commercial buildings within Sydney CBD, reinforcing the city’s strategy of optimizing urban space for business growth. 
-> This aligns with Sydney’s long-term economic plan, which encourages vertical workspaces, mixed-use developments, and sustainable office designs to maximize land use efficiency and workforce concentration​
+> This aligns with Sydney’s long-term economic plan, which encourages vertical workspaces, mixed-use developments, and sustainable office designs to maximize land use efficiency and workforce concentration​.
 
 
 ![Screenshot 2025-03-15 113710](https://github.com/user-attachments/assets/bf292e7f-9e2e-4ac3-8b75-0774582b8c5f)
 
-On the left chart, suburbs like Sydney CBD, Glebe, and Darlinghurst & Surry Hills have significantly more part-time jobs than full-time jobs. This trend could be linked to industries such as hospitality, retail, and tourism, which rely heavily on part-time or casual workers. The City of Sydney’s Economic Development Strategy emphasizes diversifying job opportunities and supporting flexible work arrangements, which may explain the higher part-time employment in these areas​
 
-On the right chart, suburbs like Sydney CBD, Redfern, and Camperdown show a significantly higher number of full-time jobs, indicating the presence of corporate offices, education institutions, and healthcare facilities, which typically employ more full-time professionals. The strategy for 2025-2035 focuses on enhancing business investment and commercial space availability, which may continue to drive full-time job growth in these areas
+On the left chart, suburbs like Sydney CBD, Glebe, and Darlinghurst & Surry Hills have significantly more part-time jobs than full-time jobs. This trend could be linked to industries such as hospitality, retail, and tourism, which rely heavily on part-time or casual workers. The City of Sydney’s Economic Development Strategy emphasizes diversifying job opportunities and supporting flexible work arrangements, which may explain the higher part-time employment in these areas​ (City Of Sydney Council, 2025).
+
+On the right chart, suburbs like Sydney CBD, Redfern, and Camperdown show a significantly higher number of full-time jobs, indicating the presence of corporate offices, education institutions, and healthcare facilities, which typically employ more full-time professionals. The strategy for 2025-2035 focuses on enhancing business investment and commercial space availability, which may continue to drive full-time job growth in these areas (City Of Sydney Council, 2025).
 
 
 ![Screenshot 2025-03-12 125619](https://github.com/user-attachments/assets/2d6b9bde-df1b-46dd-816b-439c42564cb6)
 
 
+The first chart illustrates the internal floor space trends from 2007 to 2022 across various Sydney suburbs. Sydney CBD consistently holds the largest share of total floor space, increasing from 16.08M sqm in 2007 to 17.01M sqm in 2017, before slightly decreasing to 16.25M sqm in 2022. Other key suburbs like Redfern, Camperdown, and Alexandria have seen steady growth in floor space, suggesting ongoing urban development and commercial expansion. The slight decline in Sydney CBD’s floor space in 2022 may indicate post-pandemic office space adjustments, increased remote work trends, or redevelopment efforts shifting space allocation priorities.
+
 
 ![Screenshot 2025-03-12 125726](https://github.com/user-attachments/assets/156e2e69-2815-41ae-82cf-0e744f7269f0)
 
+
+The second chart highlights the correlation between job growth, business expansion, and floor space trends from 2007 to 2022. While total jobs increased from 0.38M to 0.48M, and businesses showed steady growth, floor space expanded until 2017 but slightly declined by 2022. This shift reflects Sydney’s push for higher employment density, flexible workspaces, and mixed-use developments​
+The rise of hybrid work models and office space efficiency has allowed job growth to continue without requiring proportional increases in physical space (City Of Sydney Council, 2025).
 
 
 ![Screenshot 2025-03-15 131734](https://github.com/user-attachments/assets/1c8550b7-d152-41f7-879c-3f1709bac6f6)
 
 
+The map visualizes employment growth across Sydney suburbs, with larger bubbles representing areas with significant job growth. Key commercial hubs like Sydney CBD, Redfern, and Surry Hills exhibit strong employment expansion, aligning with the city's business districts and redevelopment projects.
+
+The bar chart (right) quantifies the proportion of fluctuating vs. consistent growth across suburbs. It reveals that the majority of blocks (over 90% in most suburbs) experienced fluctuating growth, with only a small fraction showing consistent growth (represented in purple). Sydney CBD (8.94%) and Alexandria (8.16%) have slightly higher rates of consistent growth, suggesting stable economic activity in certain commercial zones.
+
+> This shows that most buildings in Sydney experience fluctuating employment trends, likely due to business turnover, shifting industries, and evolving workspace demands. The few areas with consistent growth may reflect long-term commercial investments, stable corporate headquarters, or infrastructure-driven expansion.
+
 
 ![Screenshot 2025-03-12 125756](https://github.com/user-attachments/assets/af5bd3f6-78aa-45e0-b91b-f9b19146a9c6)
 
+
+These heatmaps visualize the growth of total businesses (top) and total jobs (bottom) from 2007 to 2022 across Sydney suburbs. Sydney CBD dominates in both categories, showing the highest number of businesses (50,292 total) and jobs (1.3 million total), reinforcing its role as the city's economic hub. Other suburbs like Darlinghurst, Alexandria, and Redfern also show steady increases, indicating expanding commercial activity. While most suburbs experienced growth, some fluctuations are visible, reflecting changing business landscapes and employment trends. The consistent rise in both businesses and jobs highlights Sydney’s economic expansion and the increasing demand for commercial spaces and workforce opportunities.
+
+
+![mapvis](https://github.com/user-attachments/assets/3ca77f99-70cd-4e8b-93c0-75fedaee1e2f)
+
+The data highlights a growing diversity in business sectors across Sydney suburbs from 2007 to 2022, reflecting the city’s economic transformation and strategic development goals. The number of businesses increased from 19,571 in 2007 to 23,511 in 2017, before slightly declining to 21,618 in 2022. Over the years, Professional & Business Services saw a rise from 2,832 businesses in 2007 to 4,042 in 2017, reinforcing Sydney’s role as a corporate and financial hub. Retail & Personal Services also grew from 3,109 to 3,399 during the same period, while Food & Drink establishments expanded from 2,750 to 3,746, showing a steady demand for consumer-oriented industries.
+
+This shift aligns with the City of Sydney’s Economic Development Strategy, which focuses on high-value industries, entrepreneurship, and business resilience​ (City Of Sydney Council, 2025).The Finance sector remained stable around 1,678–2,138 businesses, while Tourism-related businesses increased from 1,154 to 1,430 by 2017, reflecting Sydney’s push for cultural and tourism growth. The ICT sector consistently held over 1,000 businesses, supporting the city’s digital economy and tech innovation goals. These figures indicate that Sydney’s economy is adapting to changing workforce demands and urban development initiatives, ensuring long-term economic sustainability.
 
 ## Key Insights
 Which suburbs saw the highest growth?
