@@ -596,20 +596,55 @@ The data highlights a growing diversity in business sectors across Sydney suburb
 This shift aligns with the City of Sydney’s Economic Development Strategy, which focuses on high-value industries, entrepreneurship, and business resilience​ (City Of Sydney Council, 2025).The Finance sector remained stable around 1,678–2,138 businesses, while Tourism-related businesses increased from 1,154 to 1,430 by 2017, reflecting Sydney’s push for cultural and tourism growth. The ICT sector consistently held over 1,000 businesses, supporting the city’s digital economy and tech innovation goals. These figures indicate that Sydney’s economy is adapting to changing workforce demands and urban development initiatives, ensuring long-term economic sustainability.
 
 ## Key Insights
-Which suburbs saw the highest growth?
-Did job growth match business expansion?
-Was floor space expansion justified by business growth?
-Which industries declined or expanded the most?
+
+### The Driving Factors Behind Business Growth
+Sydney CBD remains the dominant business hub, with the highest number of businesses (50,292) and total jobs (1.3M) in 2022.
+Professional & Business Services, Retail, and Food & Drink sectors have seen steady expansion, reinforcing Sydney’s role as a commercial and hospitality center.
+The growth of ICT (1,047 businesses in 2017) and Finance (2,138 businesses in 2017) highlights the city’s transition toward a digital economy and financial services hub.
+
+### How Has Employment Shifted?
+Total jobs grew from 375K in 2007 to 478K in 2022, but some fluctuations occurred post-pandemic.
+Full-time jobs consistently outnumber part-time roles, but certain suburbs, such as Darlinghurst and Redfern, have seen higher part-time employment trends, likely due to hospitality and service industries.
+Employment density is highest in high-rise commercial zones, with Sydney CBD leading job concentration, aligning with Sydney’s urban planning strategy for maximizing land use efficiency.
+
+### Sydney’s Vision for Industry-Focused Development
+The City of Sydney’s Economic Development Strategy 2025-2035 outlines plans to decentralize employment hubs and transform specific suburbs into industry-focused centers:
+
+- Camperdown is set to become a leading biomedical and life sciences hub, capitalizing on its proximity to major research institutions and hospitals (Grove, 2024).
+- Eveleigh-Redfern is evolving into a technology and innovation precinct, attracting startups, digital enterprises, and advanced manufacturing (Hill, 2022).
+Green Square and Zetland are planned as emerging creative and retail districts, supporting small businesses and local entrepreneurs.
+- Ultimo and Pyrmont will continue to be centers for education, creative industries, and digital media, benefiting from existing universities and innovation clusters (City Of Sydney Council, 2022).
+  
+### What’s Next for Business and Employment Trends?
+The city’s focus on innovation, tourism, and finance will likely continue to shape future employment trends.
+Job decentralization could occur, with more businesses spreading beyond the CBD as transportation and infrastructure projects improve connectivity.
+Sustainable development initiatives, such as mixed-use spaces and vertical workspaces, will play a role in reshaping business growth patterns.
+Recommendations for Urban Planners and Business Owners
+For policymakers: 
+> Invest in suburban business districts to reduce congestion and promote local employment opportunities while aligning with Sydney’s economic strategy.
+For business owners:
+> Prioritize sectors aligned with Sydney’s growth plan, such as biomedical, technology, creative industries, and finance, to maximize long-term sustainability.
+For researchers:
+> Explore the correlation between building density, business growth, and employment trends to predict future urban expansion.
 
 ## Project Challenges
-Data integration across multiple years.
-Handling missing or inconsistent values.
-Adjusting visual scales for fair comparisons.
+- Limited Geographic Scope 
+The dataset primarily focuses on Sydney CBD and its adjacent suburbs (e.g., Camperdown, Redfern, Alexandria). However, it does not account for other major business districts like Parramatta, North Sydney, and Chatswood, which have experienced rapid growth in employment and commercial activities over the past decade. This limits the ability to compare Sydney’s broader metropolitan employment trends.
+- Lack of Industry-Specific Data
+While the dataset provides insights into total businesses and employment figures, it does not detail the industry breakdown per block. This makes it challenging to analyze how specific economic sectors (e.g., tech startups, finance, manufacturing) are shaping urban development within different suburbs.
+
+The dataset does not include details on remote work trends, employee movement between jobs, or how workers commute—all of which have become important since the pandemic. Without this information, it's harder to see how flexible work policies and changing job preferences impact where businesses and employees are located.
 
 ## Conclusion
-Summary of business and job growth trends.
-Final insights and recommendations for urban planning.
+This project analyzed business and employment growth trends across key Sydney suburbs from 2007 to 2022. The data revealed steady growth in total jobs and businesses, with Sydney CBD remaining the dominant employment hub, while suburbs like Camperdown and Redfern are emerging as industry-specific centers. However, job growth patterns were largely fluctuating, indicating economic shifts and evolving business demands.
+
+For urban planning based on Sydney Council strategies, the findings highlight the need for balanced job distribution, improved public transport access, and strategic infrastructure investments to support growing business districts. The Sydney Council’s plan to develop Camperdown as a biomedical hub and Eveleigh-Redfern as a tech innovation center aligns with these trends. Future strategies should focus on enhancing business diversity, supporting remote work-friendly spaces, and expanding data coverage to include other key metropolitan areas like Parramatta and North Sydney.
 
 ## References
-Floor space and employment survey - City of Sydney. (2024, November 26). City of Sydney. https://www.cityofsydney.nsw.gov.au/research-reports/floor-space-employment-survey-2022
+Floor space and employment survey - City of Sydney. (2024, November 26). City of Sydney. https://www.cityofsydney.nsw.gov.au/research-reports/floor-space-employment-survey-2022.
+City Of Sydney Council. (2022, April 6). More space for creativity and culture in Sydney | City of Sydney - News. News.cityofsydney.nsw.gov.au. https://news.cityofsydney.nsw.gov.au/articles/more-space-for-creativity-and-culture-in-sydney.
+City Of Sydney Council. (2025, January 22). Economic development strategy. 
+City of Sydney. https://www.cityofsydney.nsw.gov.au/strategies-action-plans/economic-development-strategy.
+Grove, N. (2024, November 27). ISPT and ART acquire site to develop $585m Healthcare and Life Sciences Hub in Sydney’s premier healthcare precinct - ISPT. ISPT. https://ispt.com.au/news/healthcare/ispt-and-art-acquire-site-to-develop-585m-healthcare-and-life-sciences-hub-in-sydneys-premier-healthcare-precinct/
+Hill, L. (2022, October 12). South Eveleigh: Sydney’s Newest Hub of Innovation. Work Club. https://workclubglobal.com/sydneys-newest-hub-of-innovation/
 
