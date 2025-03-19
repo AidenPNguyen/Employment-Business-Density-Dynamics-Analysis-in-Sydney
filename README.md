@@ -21,6 +21,14 @@
 
 [The key insights](#the-key-insights)
 
+- [The Driving Factors Behind Business Growth](#the-driving-factors-behind-business-growth)
+  
+- [How Has Employment Shifted?](#How-Has-Employment-Shifted)
+
+- [Sydney’s Vision for Industry-Focused Development](#Sydney’s-Vision-for-Industry-Focused-Development)
+
+- [What’s Next for Business and Employment Trends?](#What’s-Next-for-Business-and-Employment-Trends?)
+
 [Project challenges](#project-challenges)
 
 [Conclusion](#conclusion)
